@@ -1,0 +1,179 @@
+/*posts grid*/
+
+ul.uus-posts-wrapper{
+	list-style-type: none; 
+	margin: 0px; 
+	padding: 0px;
+}
+
+ul.uus-posts-wrapper .row{
+	margin:0;
+}
+
+ul.uus-posts-wrapper li{
+	padding: 0px; 
+	margin: 0px;
+	float: left;
+}
+
+.uus-post-title{
+	margin-top:15%;
+	font-size:36px;
+}
+
+.uus-post-excerpt{
+	padding: 25px 15%;
+	line-height: 2;
+}
+
+/*flat grid version*/
+.uus-flat-text-wrapper{
+	background-color: #00529b;
+	width: 100%;
+	height: 100%;
+	visibility:hidden;
+	opacity:0;
+	position:absolute;
+	top: 0px;
+
+	-webkit-transition: all 0.2s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.uus-posts-wrapper li:hover .uus-flat-text-wrapper{
+	visibility:visible;
+	opacity:.95;
+	cursor: pointer;
+}
+
+.uus-posts-wrapper .uus-flat-text-wrapper, .uus-posts-wrapper .uus-portfolio-text-wrapper{
+	text-align: center;
+	color: #fff;
+}
+
+.uus-post-button{
+	padding:20px 60px;
+	border:1px solid #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	display:inline-block;
+}
+
+/*portfolio grid*/
+.uus-portfolio-text-wrapper{
+	color:white;
+
+}
+.uus-portfolio-text-overlay{
+	visibility:hidden;
+	opacity:0;
+	background-color: black;
+	-webkit-transition: all 0.2s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	transition: all 0.2s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+.uus-portfolio-text-wrapper .uus-post-excerpt{
+	visibility:hidden;
+	opacity:0;
+	padding:0;
+}
+.uus-portfolio-link{
+	position: absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+}
+.uus-portfolio-link:hover{
+	text-decoration: none;
+}
+.uus-portfolio-text-wrapper{
+	width:75%;
+	padding:0 10% 0 10%;
+}
+
+.uus-portfolio-text-overlay, .uus-portfolio-border{
+	width: 100%;
+	height: 100%;
+	position:absolute;
+	top: 0px;
+}
+
+.uus-portfolio-border{
+	border:3px solid black;
+}
+
+.grid-item:hover .uus-portfolio-text-overlay{
+	visibility:visible;
+	opacity:.6;
+	cursor: pointer;
+	-webkit-transition: all 0.75s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	transition: all 0.75s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.grid-item:hover .uus-post-excerpt{
+	visibility:visible;
+	opacity:1;
+	cursor: pointer;
+	-webkit-transition: all 0.75s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	transition: all 0.75s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.grid-item:hover .uus-portfolio-border{
+	border:8px solid rgb(0,82,155);
+	-webkit-transition: all 0.25s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	transition: all 0.25s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+.uus-portfolio-text-wrapper .uus-post-excerpt{
+	transform: matrix(1.04, 0, 0, 1.04, 0, 0);
+}
+
+.grid-item:hover .uus-post-excerpt{
+	transform: matrix(1, 0, 0, 1, 0, 0);
+	-webkit-transition: all 1s ease-out;  /* Android 2.1+, Chrome 1-25, iOS 3.2-6.1, Safari 3.2-6  */
+	transition: all 1s ease-out;  /* Chrome 26, Firefox 16+, iOS 7+, IE 10+, Opera, Safari 6.1+  */
+}
+
+
+/*lazy loading */
+
+/*prevents flicker when using animate.cs*/
+
+.lazy-hidden{
+	opacity: 0;
+}
+/* Large desktop */
+@media (min-width: 1200px) and (max-width: 1600px){
+	.uus-post-title{
+		margin-top:10%;
+		font-size:24px;
+	}
+	.uus-flat-text-wrapper .uus-post-excerpt{
+		padding: 10px 10%;
+		line-height: 1;
+		margin: 0 0 10px;
+		font-size: 14px;
+	}
+
+}
+ 
+@media (min-width: 768px) and (max-width: 979px) {
+	.uus-post-title{
+		margin-top:5%;
+		font-size:24px;
+	}
+	.uus-flat-text-wrapper .uus-post-excerpt{
+		padding: 15px 10%;
+		line-height: 1.5;
+	}
+	.uus-post-button{
+		padding:10px 45px;
+	}
+}
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { ... }
+ 
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { ... }
+ 
+/* Landscape phones and down */
+@media (max-width: 480px) { ... }
