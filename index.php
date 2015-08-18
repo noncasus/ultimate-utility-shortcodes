@@ -416,26 +416,32 @@ function uus_products_type_listing($atts, $content){
 
 	switch ($type) {
 		case '':
-			$meta_query = array();
+			$meta_query = array(array());
 			break;
 		case 'best':
 			$meta_query = array(
-                    'key'     => 'total_sales'
+								array(
+				                    'key'     => 'total_sales'
+				                        )
                         );
 			break;
 		case 'featured':
 			$meta_query = array(
-                    'key'     => '_featured',
-                    'value'   => 'yes'
-                        );
+								array(
+				                    'key'     => '_featured',
+				                    'value'   => 'yes'
+				                        )
+				               );
 			break;
 		case 'sale':
 			$meta_query = array(
-                    'key'     => '_sale_price',
-                    'value'   => 0,
-                    'compare' => '>',
-                    'type'    => 'NUMERIC'
-                        );
+								array(
+				                    'key'     => '_sale_price',
+				                    'value'   => 0,
+				                    'compare' => '>',
+				                    'type'    => 'NUMERIC'
+				                        )
+				               );
 			break;
 	}
 	$args = array(
@@ -453,6 +459,7 @@ function uus_products_type_listing($atts, $content){
     );
 
     $loop = new WP_Query( $args );
+
     if($owlslider){
     	$id = 'uus-owl-slider-id';
         $output = uus_owlslider( $shortcode, $loop, $id, $numcols, $img_attr, $text, $arrows );
